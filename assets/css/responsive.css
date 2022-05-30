@@ -24,10 +24,12 @@
         display: none;
         color: black;
         cursor: default;
+        z-index:2;
     }
 
     .header__sort-bar{
         display: flex;
+        top: 52px;
     }
 
     .container{
@@ -38,6 +40,10 @@
         height: 50px;
         width: 50px;
     }
+
+    .icon-shopping-cart:hover .icon-shopping-cart-menu{
+        background-color: white;
+    }
 }
 
 
@@ -47,6 +53,10 @@
         display: none;
     }
 
+    .mobile-category{
+        display: block;
+    }
+
     .header__navbar--icon {
         font-size: 25px;
         padding: 20px 0 20px 30px;
@@ -54,8 +64,14 @@
     }
 
     input.input-content {
-        margin-left: 50px;
+        /* margin-left: 50px; */
     }
+
+    .header__mobile-search {
+        margin-left: 32px;
+    }
+    
+    
 }
 
 
@@ -63,6 +79,71 @@
 @media (max-width:739px){
     .hide-on-mobile{
         display: none;  
+    }
+
+    .mobile-category{
+        display: block;
+    }
+
+    .header__input{
+        /* display: none; */
+        position: fixed;
+        top: 62px;
+        right: 0;
+        left: 0;
+        box-shadow: 0 1 2px rgba(0,0,0,0.05);
+        z-index: 1;
+        animation: mobileSearchSideIn linear 0.5s;
+        display: none;
+    }
+
+    .header__search-checkbox:checked ~ .header__input{
+        display: flex;
+    }
+
+    .input-content{
+        /* display: none; */
+    }
+
+    .input-search-icon{
+        /* display: none; */
+    }
+
+    .header__navbar--container{
+        justify-content: space-between;
+        height: 68px;
+    }
+
+    .header__navbar--icon{
+        padding: 0;
+    }
+
+    .img.header__logo--shopee{
+        width: unset;
+        display: block;
+    }
+
+    .header__navbar--icon{
+        margin-right: 0;
+        padding: 0 12px;
+    }
+
+    .header__mobile-search-icon{
+        padding: 0 12px;
+    }
+
+    .app__content{
+        margin: 0 5px;
+    }
+
+}
+
+
+@keyframes mobileSearchSideIn {
+    from{
+        top: 34px;
+    }to{
+        top: 62px;
     }
 
 }
